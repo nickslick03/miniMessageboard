@@ -1,0 +1,27 @@
+header {
+    position: sticky;
+    top: 10px;
+    color: white;
+    background-color: rgba(78, 92, 115, 0.8);
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+
+header > a.new {
+    background-color: white;
+    padding: 8px;
+    border: solid 3px #AFD7D7;
+    border-radius: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
+    text-decoration: none;
+    font-size: large;
+}
+
+header > a.new:hover {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+}
