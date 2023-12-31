@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message | Mini Messagebaord</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/new.css">
+    <link rel="stylesheet" href="/static/footer.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <form action="/new" method="post">
+        <h1>New Message</h1>
+        <label for="user">User: </label>
+        <input type="text" id="user" name="user">
+        <label for="body">Message: </label>
+        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        <div class="button-container">
+            <button type="reset" class="reset">Reset</button>
+            <button type="submit" class="submit">Submit</button>
+        </div>
+    </form>
+    <%- include('partials/footer') %>
+</body>
+</html>

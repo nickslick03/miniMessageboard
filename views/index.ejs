@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mini Messageboard</title>
     <link rel="stylesheet" href="/static/global.css">
     <link rel="stylesheet" href="/static/header.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/footer.css">
 </head>
 <body>
-    <div class="top-container">
-        <%- include('partials/header') %>
-        Hello <%= locals.name %>
-    </div>
+    <%- include('partials/header') %>
+    <main>
+        <% if (typeof locals.messages === 'object') { %>
+            <% locals.messages.forEach(message => { %>
+                <article>
+                    <p><%= message.body %></p>
+                    <div>
+                        <span><%= message.user %></span>
+                        <% const { date } = message; %>
+                        <span><%= `${date.getHours()}:${date.getMinutes().toLocaleString('en-US', { minimumIntegerDigits: 2 })}
+                        ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}` %></span>
+                    </div>
+                </article>
+            <% }) %>
+        <% } else { %>
+            <div>No messages...</div>
+        <% } %>
+    </main>
+    <%- include('partials/footer') %>
 </body>
 </html>
