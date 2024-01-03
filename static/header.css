@@ -15,6 +15,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 h2 {
@@ -22,6 +23,7 @@ h2 {
 }
 
 header > a.new {
+    white-space: nowrap;
     background-color: white;
     padding: 8px;
     border: solid 3px #AFD7D7;
